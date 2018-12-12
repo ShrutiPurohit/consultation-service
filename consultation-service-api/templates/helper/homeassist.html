@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <p>Hello</p>
+    <p>Welcome {{ user.username }}</p>
+    <p><a href="/allcases">View all cases</a></p>
+    <h2>Tags</h2>
+    {% for tag in tags %}
+    <a href="/casetag/{{tag}}">{{tag}}</a>&nbsp; &nbsp;&nbsp;
+    {% endfor %}
+    <p><a href="/logout">Logout</a></p>
+    {% else %}
+    <p><a href="/login">Login</a></p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>History</title>
+</head>
+<body>
+	<h1>History</h1>
+	<table border = "1">
+		<tr>
+			<th>Patient name</th>
+			<th>Symptoms</th>
+			<th>Date</th>
+			<th>Tags</th>
+			<th>Diagnosis</th>
+		</tr>
+		{% for item in history %}
+		<tr>
+			<td>{{item.patientname}}</td>
+			<td>{{item.symptoms}}</td>
+			<td>{{item.date_created}}</td>
+			<td>{{item.groupname}}</td>
+			<td>{{item.diagnosis}}</td>
+		</tr>
+		{%endfor%}
+
+	</table>
+	<a href="/">Home</a>
+	<p><a href="/logout">Logout</a></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+	<div style="width=50%">
+		<table>
+			<tr>
+				<td>Patient name: </td>
+				<td>{{case.patientname}}</td>
+			</tr>
+			<tr>
+				<td>Symptoms: </td>
+				<td>{{case.symptoms}}</td>
+			</tr>
+
+		</table>	
+
+	</div>
+	
+	<form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+</body>
+</html>

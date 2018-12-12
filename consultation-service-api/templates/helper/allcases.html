@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Cases</title>
+</head>
+<body>
+	<h1>All Cases</h1>
+	<table border = "1">
+		<tr>
+			<th>Case ID</th>
+			<th>Patient ID</th>
+			<th>Patient name</th>
+			<th>Symptoms</th>
+			<th>Mobile Number</th>
+			<th>Date</th>
+			<th>Tags</th>
+			<th>Diagnosis</th>
+			<th></th>
+		</tr>
+		{% for item in allcases %}
+		<tr>
+			<td>{{item.caseid}}</td>
+			<td>{{item.patientid}}</td>
+			<td>{{item.patientname}}</td>
+			<td>{{item.symptoms}}</td>
+			<td>{{item.mobile_no}}</td>
+			<td>{{item.date_created}}</td>
+			<td>{{item.groupname}}</td>
+			<td>{{item.diagnosis}}</td>
+			<td><a href="/update/{{item.caseid}}">update</a></td>
+		</tr>
+		{%endfor%}
+
+	</table>
+	<p><a href="/homeassist">Assistant Home</a></p>
+	<p><a href="/logout">Logout</a></p>
+</body>
+</html>
